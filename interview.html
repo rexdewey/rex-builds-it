@@ -77,7 +77,7 @@
     <label>Your name and business
       <input type="text" id="who" autocomplete="name" placeholder="Jane Smith, Smith Bakery">
     </label>
-    <div class="note warn"><b>Please don't say any passwords out loud.</b> Recordings aren't a safe place for them. When Rex needs access to an account, he'll send you simple steps to add him as a user, so no password ever changes hands.</div>
+    <div class="note warn"><b>Please don't say any passwords out loud.</b> Recordings aren't a safe place for them. When I need access to an account, I'll send you simple steps to add me as a user, so no password ever changes hands.</div>
     <div class="note">Your phone will ask to use the microphone. Tap <b>Allow</b>. Turn your volume up so you can hear the questions.</div>
     <div class="err" id="err" hidden></div>
     <button class="btn" id="start">Start</button>
@@ -105,7 +105,7 @@
     </div>
     <div class="sent" id="sent"></div>
     <button class="btn ghost" id="break">Take a break</button>
-    <p class="note">Each answer is capped at 2 minutes because of upload size limits. Didn't get it all out? That's fine. Finish the list, and if anything needs more detail, Rex will set up a short follow-up call after he reviews your answers.</p>
+    <p class="note">Each answer is capped at 2 minutes because of upload size limits. Didn't get it all out? That's fine. Finish the list, and if anything needs more detail, I'll set up a short follow-up call after I review your answers.</p>
   </section>
 
   <!-- 3. Break -->
@@ -118,10 +118,10 @@
   <!-- 4. Finished -->
   <section class="screen" id="s-done" hidden>
     <h1>All done. Thank you!</h1>
-    <p>Rex will review your answers and get back to you soon. If anything needs more detail, he'll set up a short follow-up call.</p>
-    <div class="note"><b>Next step: access.</b> Rex will text you simple steps to add him as a user on your website and domain accounts. No password needed.</div>
-    <div class="note" id="textbox" hidden>Can't add a user, or stuck? Text Rex at <b id="phone"></b>. Please change that password once your site is finished.
-      <a class="btn" id="textbtn" style="display:block;text-align:center;text-decoration:none;margin-top:12px;font-size:24px">Text Rex</a></div>
+    <p>I'll review your answers and get back to you soon. If anything needs more detail, I'll set up a short follow-up call.</p>
+    <div class="note"><b>Next step: access.</b> I'll text you simple steps to add me as a user on your website and domain accounts. No password needed.</div>
+    <div class="note" id="textbox" hidden>Can't add a user, or stuck? Text me at <b id="phone"></b>. Please change that password once your site is finished.
+      <a class="btn" id="textbtn" style="display:block;text-align:center;text-decoration:none;margin-top:12px;font-size:24px">Text me</a></div>
     <div id="testout" hidden>
       <p class="progress">Test mode: play back each answer</p>
       <div class="playlist" id="playlist"></div>
@@ -140,14 +140,14 @@
 const QUESTIONS = [
   { text: "What's your business name, and what do you do?", audio: "q1.m4a" },
   { text: "Do you have a website now? What's the address, and what's it built on, like Wix, GoDaddy, or Squarespace? It's fine to say you don't know.", audio: "" },
-  { text: "Where did you buy your domain name, and what email is on that account? Please don't say any passwords. Rex will send you simple steps to add him as a user instead.", audio: "" },
+  { text: "Where did you buy your domain name, and what email is on that account? Please don't say any passwords. I'll send you simple steps to add me as a user instead.", audio: "" },
   { text: "Who are your best customers, and what area do you serve?", audio: "" },
   { text: "When someone visits your site, what's the one thing you want them to do? Call, book, buy, or fill out a form?", audio: "" },
   { text: "What makes you different from your competitors?", audio: "" },
   { text: "Name a website or two you like, and what you like about them.", audio: "" },
   { text: "What pages or info does your site need? Things like hours, prices, photos, or reviews.", audio: "" },
   { text: "Do you have a logo, brand colors, or photos you'd like to use?", audio: "" },
-  { text: "When do you need it done, and is there anything else Rex should know?", audio: "" },
+  { text: "When do you need it done, and is there anything else I should know?", audio: "" },
 ];
 const REX_PHONE = "";          // Rex's texting number, e.g. "208-555-1234". Empty = hide the Text Rex box.
 const BREAK_AFTER = 5;          // offers a break after this question
@@ -311,7 +311,7 @@ async function upload(n, qtext, blob, secs) {
     } catch {}
     await new Promise(r => setTimeout(r, 2000 * attempt));
   }
-  $("sent").textContent = `Answer ${n} didn't send. Please text Rex so he knows.`;
+  $("sent").textContent = `Answer ${n} didn't send. Please text me so I know.`;
 }
 
 function finish() {
